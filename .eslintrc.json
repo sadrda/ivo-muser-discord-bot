@@ -21,6 +21,7 @@
     "no-multi-spaces": "error",
     "space-before-function-paren": ["error", "always"],
     "no-multiple-empty-lines": ["error", {"max": 1}],
-    "prefer-template": "error"
+    "prefer-template": "error",
+    "no-console": "warn"
   }
 }

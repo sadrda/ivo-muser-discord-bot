@@ -6,6 +6,7 @@ const psalm = require("./endpoints/psalm");
 const messe = require("./endpoints/messe");
 const spiel = require("./endpoints/spiel");
 const stol = require("./endpoints/stol");
+const auslaender = require("./endpoints/auslaender");
 
 const client = new Discord.Client();
 
@@ -35,6 +36,9 @@ client.on("message", async (message) => {
 					break;
 				case "spiel":
 					spiel(message);
+					break;
+				case "auslaender" || "ausländer":
+					auslaender(message);
 					break;
 				default:
 					hilfe(message);
