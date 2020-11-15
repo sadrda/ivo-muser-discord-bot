@@ -6,7 +6,7 @@ const mainUrl = "https://www.stol.it/";
 let page = null;
 
 (async () => {
-	const browser = await puppeteer.launch({defaultViewport: null});
+	const browser = await puppeteer.launch({defaultViewport: null, args: ["--no-sandbox"]});
 	page = await browser.newPage();
 })();
 
