@@ -7,7 +7,6 @@ module.exports = (message) => {
 	axios.get(`https://api.diversitydata.io/?fullname=${urlName}`)
 		.then((response) => {
 			const analysis = response.data;
-			message.reply(`
-            Dr ${ analysis.fullname } isch zu ${ Math.round(+analysis["ethnicity probability"] * 10000) / 100 }% ${ analysis.ethnicity } und zu ${ Math.round(+analysis["gender probability"] * 10000) / 100 }% ${ analysis.gender}`);
+			message.reply(`Dr ${ analysis.fullname } isch zu ${ Math.round(+analysis["ethnicity probability"] * 10000) / 100 }% ${ analysis.ethnicity } und zu ${ Math.round(+analysis["gender probability"] * 10000) / 100 }% ${ analysis.gender}`);
 		});
 };
