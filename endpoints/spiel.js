@@ -8,7 +8,7 @@ module.exports = async (message) => {
 			connection.play(ytdl(splitMessage[2], { filter: "audioonly" }));
 		}
 		else {
-			message.reply("Wos solli spielen? Muasch mor schun ah an link geben.");
+			message.reply("Wos solli spielen? Muasch mor schun ah an Link geben.");
 		}
 	} else {
 		message.reply("Geahsch mr gian bitte zearsch in a Stimmenkanal inni? Geah dai, seimr so guat.");

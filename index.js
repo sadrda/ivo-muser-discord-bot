@@ -6,6 +6,7 @@ const psalm = require("./endpoints/psalm");
 const messe = require("./endpoints/messe");
 const spiel = require("./endpoints/spiel");
 const stol = require("./endpoints/stol");
+const antwort = require("./endpoints/antwort");
 const wetter = require("./endpoints/wetter");
 const auslaender = require("./endpoints/auslaender");
 
@@ -44,8 +45,14 @@ client.on("message", async (message) => {
 				case "auslaender" || "ausländer":
 					auslaender(message);
 					break;
-				default:
-					hilfe(message);
+				default: {
+					splitMessage.shift();
+					const joinedCommand = splitMessage.join(" ");
+					if(joinedCommand.endsWith("?"))
+						antwort(message, joinedCommand);
+					else
+						hilfe(message);
+				}
 				}
 			}
 			else
