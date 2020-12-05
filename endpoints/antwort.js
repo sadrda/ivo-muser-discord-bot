@@ -1,16 +1,17 @@
 module.exports = (message, text) => {
-	if(text.includes("oder") || text.includes("Oder")) {
+	if(text.toLowerCase().includes("oder") || text.toLowerCase().includes("odr")) {
 		let splitMessage = text.split(" ");
 		splitMessage.forEach((word, i) => {
-			if(word === "oder" || word === "Oder"){
+			if(word === "oder" || word === "Oder" || word === "Odr" || word === "odr"){
 				if(splitMessage[i - 1] && splitMessage[i + 1]){
-					message.reply(Math.random() > 0.5 ? `Auf jeden foll ${ splitMessage[i - 1]}` : `I tendier zu ${ splitMessage[i + 1].replace("?", "")}`);
+					message.reply(Math.random() > 0.5 ? `Auf jeden foll ${ splitMessage.slice(0, i).join(" ")}` 
+						: `I tendier zu ${ splitMessage.slice(i + 1, splitMessage.length).join(" ").replace("?", "")}`);
 				}
 			}
 		});
 	}
-	else if(text.startsWith("wer") || text.startsWith("Wer")){
-		switch(Math.floor(Math.random() * 10)) {
+	else if(text.toLowerCase().startsWith("wer")){
+		switch(Math.floor(Math.random() * 20)) {
 		case 0:
 			message.reply("dr gattuso");
 			break;
@@ -41,8 +42,39 @@ module.exports = (message, text) => {
 		case 9:
 			message.reply("dr dilitz");
 			break;
+		case 10:
+			message.reply("dr stief");
+			break;
+		case 11:
+			message.reply("dr vinci");
+			break;
+		case 12:
+			message.reply("dr pfau");
+			break;
+		case 13:
+			message.reply("i, dr ivo muser");
+			break;
+		case 14:
+			message.reply("dr veith");
+			break;
+		case 15:
+			message.reply("dr gobus");
+			break;
+		case 16:
+			message.reply("dr gunzn");
+			break;
+		case 17:
+			message.reply("dr londeshauptmonn");
+			break;
+		case 18:
+			message.reply("dr richard theiner");
+			break;
+		case 19:
+			message.reply("dr reinhold messner");
+			break;
+
 		}
-	} else if (text.startsWith("was") || text.startsWith("Was") || text.startsWith("wos") || text.startsWith("Wos")) {
+	} else if (text.toLowerCase().startsWith("was") || text.toLowerCase().startsWith("wos")) {
 		switch(Math.floor(Math.random() * 10)) {
 		case 0:
 			message.reply("die bibel");
@@ -76,7 +108,7 @@ module.exports = (message, text) => {
 			break;
 		}
 	}
-	else if (text.startsWith("wo") || text.startsWith("Wo")) {
+	else if (text.toLowerCase().startsWith("wo") || text.toLowerCase().startsWith("wou")) {
 		switch(Math.floor(Math.random() * 10)) {
 		case 0:
 			message.reply("ban londtog");
@@ -110,7 +142,75 @@ module.exports = (message, text) => {
 			break;
 		}
 	}
-	else if (text.startsWith("wenn") || text.startsWith("Wenn")) {
+	else if (text.toLowerCase().startsWith("wieso") || text.toLowerCase().startsWith("wisou") || text.toLowerCase().startsWith("brum")) {
+		switch(Math.floor(Math.random() * 10)) {
+		case 0:
+			message.reply("weil heint giggermanta isch");
+			break;
+		case 1:
+			message.reply("weil dr tryndamere gefeedet wor");
+			break;
+		case 2:
+			message.reply("wegen dr flashbang");
+			break;
+		case 3:
+			message.reply("wegen die auslaender");
+			break;
+		case 4:
+			message.reply("jo wisou nitta? konnma schumol so mochn");
+			break;
+		case 5:
+			message.reply("wegen denn corona virus");
+			break;
+		case 6:
+			message.reply("weil dr rai sender bouzn drhintersteckt");
+			break;
+		case 7:
+			message.reply("weils schusch niamet tuat");
+			break;
+		case 8:
+			message.reply("weils in langes schu so worm wor");
+			break;
+		case 9:
+			message.reply("weil schusch dr wolf ins die viecher reisst");
+			break;
+		}
+	}
+	else if (text.toLowerCase().startsWith("wie") || text.toLowerCase().startsWith("wia")) {
+		switch(Math.floor(Math.random() * 10)) {
+		case 0:
+			message.reply("huaraguat");
+			break;
+		case 1:
+			message.reply("kannt besser sein");
+			break;
+		case 2:
+			message.reply("mit di fiass");
+			break;
+		case 3:
+			message.reply("volle geil");
+			break;
+		case 4:
+			message.reply("so wia in die guatn oltn zeitn");
+			break;
+		case 5:
+			message.reply("guat, und diar?");
+			break;
+		case 6:
+			message.reply("uan schritt nochn ondern");
+			break;
+		case 7:
+			message.reply("es isch zeit an uhr zu kafn");
+			break;
+		case 8:
+			message.reply("jo guat, iatz weahrt giahn dr ouberwind kemmen");
+			break;
+		case 9:
+			message.reply("so wia in sunnta in dr kirch");
+			break;
+		}
+	}
+	else if (text.toLowerCase().startsWith("wenn")) {
 		switch(Math.floor(Math.random() * 10)) {
 		case 0:
 			message.reply("Uma 6e");
