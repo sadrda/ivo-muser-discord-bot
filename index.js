@@ -6,6 +6,7 @@ const psalm = require("./endpoints/psalm");
 const messe = require("./endpoints/messe");
 const spiel = require("./endpoints/spiel");
 const stol = require("./endpoints/stol");
+const promi = require("./endpoints/promi");
 const antwort = require("./endpoints/antwort");
 const wetter = require("./endpoints/wetter");
 const auslaender = require("./endpoints/auslaender");
@@ -29,6 +30,9 @@ client.on("message", async (message) => {
 				switch(command) {
 				case "stol":
 					stol(message);
+					break;
+				case "promi" || "promiflash":
+					promi(message);
 					break;
 				case "messe":
 					messe(message);
