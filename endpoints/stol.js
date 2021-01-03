@@ -13,7 +13,7 @@ let page = null;
 module.exports = async (message) => {
 	await page.goto(mainUrl);
 	const html = await page.content();
-	const topArticle = $("ul > li > article > div > a", html);
+	const topArticle = $("section > ul > li > article > div > a", html);
 	const urlExtension = $(topArticle).attr("href");
 	message.reply(`Schaug enk amol un wos in insern schianen landl passiert:\n ${mainUrl + urlExtension}`);
 }; 
